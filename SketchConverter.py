@@ -5,7 +5,6 @@ import cv2
 image = None
 sketch = None
 
-
 def _import():
     global image, sketch
     image = cv2.imread(openFile(), 1)
@@ -35,7 +34,6 @@ def convert():
 def openFile():
     filepath = filedialog.askopenfilename()
     return filepath
-
 
 if __name__== "__main__":
     window = Tk()
