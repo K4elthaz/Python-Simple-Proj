@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from PIL import ImageTk, Image
 import cv2
 
 image = None
@@ -38,12 +39,20 @@ def openFile():
 if __name__== "__main__":
     window = Tk()
     window.title("Image to Sketch")
-    window.geometry("800x600")
+    window.geometry("500x500")
+    
+    c=Canvas(window,bg = "gray16",height=600, width= 600)
+    filename = PhotoImage(file = "Thumbnail.jpg")
+    background_label= Label(window , image=filename)
+    background_label.place(x=0 , y= 0,relwidth= 1, relheight= 1)
+    
     import_button = Button(text="Select Jpeg File",command=_import)
     import_button.pack()
+    import_button.place(x = 50, y = 20)
     
     convert_button = Button(text="Convert",command=convert)
     convert_button.pack()
+    convert_button.place(x = 50, y = 50)
     window.mainloop()
     
 
